@@ -3,8 +3,9 @@ import PageHeader from "../../components/PageHeader";
 
 import "./styles.css";
 import Input from "../../components/Input";
-import warningIcon from '../../assets/images/icons/warning.svg';
+import warningIcon from "../../assets/images/icons/warning.svg";
 import Textarea from "../../components/Textarea";
+import Select from "../../components/Select";
 
 function TeacherForm() {
   return (
@@ -20,24 +21,35 @@ function TeacherForm() {
           <Input name="name" label="Nome Completo" />
           <Input name="avatar" label="Avatar" />
           <Input name="whatsapp" label="WhatsApp" />
-          <Textarea name="bio" label="Biografia"/>
+          <Textarea name="bio" label="Biografia" />
         </fieldset>
 
         <fieldset>
           <legend>Sobre a aula</legend>
-          <Input name="subject" label="Matéria" />
+          <Select
+            name="subject"
+            label="Matéria"
+            options={[
+              { value: "Artes", label: "Artes" },
+              { value: "Português", label: "Português" },
+              { value: "Matémática", label: "Matémática" },
+              { value: "Biologia", label: "Biologia" },
+              { value: "Filosofia", label: "Filosofia" },
+              { value: "História", label: "História" },
+              { value: "Física", label: "Física" },
+              { value: "Química", label: "Química" },
+            ]}
+          />
           <Input name="cost" label="Curso da sua hora por aula" />
         </fieldset>
 
         <footer>
           <p>
-            <img src={warningIcon} srt="Aviso importante" />
+            <img src={warningIcon} alt="Aviso importante" />
             Importante <br />
             Preencha todos os dados.
           </p>
-          <button type="button">
-            Salvar cadastro
-          </button>
+          <button type="button">Salvar cadastro</button>
         </footer>
       </main>
     </div>
