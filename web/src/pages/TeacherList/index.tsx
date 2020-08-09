@@ -25,6 +25,7 @@ function TeacherList() {
     });
 
     setTeachers(response.data);
+    console.log(response)
   }
 
   return (
@@ -83,6 +84,7 @@ function TeacherList() {
         {teachers.map((teacher) => {
           return <TeacherItem teacher={teacher} />;
         })}
+        {teachers.length === 0 ? <p>Lista vazia, experimente fazer uma nova pesquisa</p> : null}
       </main>
     </div>
   );
